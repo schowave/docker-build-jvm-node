@@ -19,6 +19,10 @@ RUN curl -fsSL https://deb.nodesource.com/setup_19.x | bash -  \
     && unzip awscliv2.zip  \
     && ./aws/install  \
     && rm -rf awscliv2.zip aws \
+    # Helm Installation \
+    && curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 \
+    && chmod 700 get_helm.sh \
+    && ./get_helm.sh \
     # Cleanup \
     && apt-get -y clean \
     && apt-get -y autoclean \
