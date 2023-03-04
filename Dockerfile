@@ -23,6 +23,11 @@ RUN curl -fsSL https://deb.nodesource.com/setup_19.x | bash -  \
     && curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 \
     && chmod 700 get_helm.sh \
     && ./get_helm.sh \
+    # Kubectl Installation \
+    && curl -LO https://dl.k8s.io/release/v1.24.8/bin/linux/amd64/kubectl \
+    && install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl \
+    # Make Installation \
+    && apt-get -y install make \
     # Cleanup \
     && apt-get -y clean \
     && apt-get -y autoclean \
